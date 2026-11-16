@@ -1,4 +1,4 @@
-const CACHE='webhero-v18';
+const CACHE='webhero-v20';
 const CORE=['./','./index.html','./manifest.json','./vendor/three.module.js','./icon-192.png','./icon-512.png'];
 const AUDIO=['start','fangad','boss','hint','sving','traff','seger','slut','landning'].map(n=>'./ljud/'+n+'.mp3');
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
