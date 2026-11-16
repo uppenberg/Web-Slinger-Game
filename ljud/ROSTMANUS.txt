@@ -1,0 +1,14 @@
+RÖSTMANUS – NÄTHJÄLTEN
+Spela in eller generera varje replik som MP3 och spara den med exakt filnamn i den här mappen. Använd gärna en pigg, egen hjälteröst.
+
+start.mp3    Nu kör vi! Staden behöver oss!
+fangad.mp3   Snyggt jobbat! En bov mindre!
+boss.mp3     Se upp! En ärkerival har dykt upp!
+hint.mp3     Följ pilen och ljuspelaren för att hitta bovarna!
+sving.mp3    Håll inne hoppknappen i luften för att svinga!
+traff.mp3    Träff! Fortsätt skjuta nät!
+seger.mp3    Fantastiskt! Ärkerivalen är fångad!
+slut.mp3     Tiden är slut! Vilken hjälteinsats!
+landning.mp3 Ingen fara, upp och hoppa igen!
+
+Namnet läses separat med webbläsarens talsyntes före inspelningen. Utan MP3 används talsyntes för hela repliken. Svenska röster och offline-talsyntes beror på enheten.

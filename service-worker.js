@@ -1,0 +1,8 @@
+const CACHE='webhero-v15';
+const CORE=['./','./index.html','./manifest.json','./vendor/three.module.js','./icon-192.png','./icon-512.png'];
+const AUDIO=['start','fangad','boss','hint','sving','traff','seger','slut','landning'].map(n=>'./ljud/'+n+'.mp3');
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('webhero-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+async function cacheAudio(){const cache=await caches.open(CACHE);await Promise.all(AUDIO.map(async url=>{try{const response=await fetch(url,{cache:'no-cache'});if(response.ok)await cache.put(url,response)}catch(e){}}))}
+self.addEventListener('message',event=>{if(event.data?.type==='CACHE_AUDIO')event.waitUntil(cacheAudio())});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;const url=new URL(event.request.url);if(url.pathname.includes('/ljud/')){event.respondWith(fetch(event.request).then(async response=>{if(response.ok){const cache=await caches.open(CACHE);await cache.put(event.request,response.clone())}return response}).catch(()=>caches.match(event.request).then(r=>r||Response.error())));return}event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request)))});
