@@ -1,5 +1,5 @@
-const CACHE='webhero-v39';
-const CORE=['./','./index.html','./manifest.json','./vendor/three.module.js','./vendor/GLTFLoader.js','./vendor/utils/BufferGeometryUtils.js','./vendor/utils/SkeletonUtils.js','./models/cat.glb','./models/spiderman.glb','./models/hatch_spidey_2.glb','./models/rhino.glb','./models/venom.glb','./models/shocker.glb','./icon-192.png','./icon-512.png'];
+﻿const CACHE='webhero-v41';
+const CORE=['./','./index.html','./manifest.json','./vendor/three.module.js','./vendor/GLTFLoader.js','./vendor/utils/BufferGeometryUtils.js','./vendor/utils/SkeletonUtils.js','./models/cat.glb','./models/hatch_spidey_3.glb','./models/rhino.glb','./models/venom.glb','./models/shocker.glb','./icon-192.png','./icon-512.png'];
 const AUDIO=['start','fangad','boss','hint','sving','traff','seger','slut','landning'].map(n=>'./ljud/'+n+'.mp3');
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('webhero-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
