@@ -1,0 +1,17 @@
+{
+  "ESPEAK-NG-LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+  "MODEL_CARD": "952c05227c175d48aafe40eb73935d8cf6b7a214ad4f9772b4180c084e5094c3",
+  "ONNX-LICENSE": "d25deed12d803f6c973597348627b1939e2d19bbc28fda83c93ea0cde44702da",
+  "ort-wasm-simd.wasm": "6783fcd6647ce1b426a527c31412a9c40894552faa609e9c931b3239a3438071",
+  "ort-wasm.wasm": "969afd00c79afead28a90b6acd01bd64abe4b5ac8bc9650c3dee3aefc6e0cea6",
+  "ort.wasm.min.js": "654435ead2d823e56d5893ec53be49f6ddb7e827096561aae63501071470cf23",
+  "PIPER-PHONEMIZE-LICENSE.md": "13746d509d74e55ea2265fbef204bb7cdbf84a8315b0207e988326cb54387028",
+  "piper_phonemize.data": "29f1025eb23a5b5c192cd14a6efbce4509402ff265405072ee6f7d1a09b78f8c",
+  "piper_phonemize.js": "fef0c2fc442d24fdef5c7c7cc37d5da2314407640fe11ab1bfe347c723dff19b",
+  "piper_phonemize.wasm": "b777cd107a91d2bcc6a1ea46f2c26a662a7407394fe84589198aeaa83dd7a9d6",
+  "README.md": "ab7069e04ea08aa1826b883636cb0d9670f6b362d0b874015c0dd4f216dd8592",
+  "sv_SE-lisa-medium.onnx": "94cae912b31d6e9140d3f5160f1815951588600c7a9e43d539ba1e81a110d131",
+  "sv_SE-lisa-medium.onnx.json": "51e48b65d7427aee9e8e736b370ff4fe6e3e45e47a56e5d8819647b7076ffb0a",
+  "sv_SE-nst-medium.onnx": "df011f56825a59dd1efc080c38a65a1ef70407e60f63050e9246f43a3d7e471e",
+  "sv_SE-nst-medium.onnx.json": "d45dd74cbb4eca58694bf04a97e243044092476f28a55ae26424f0653086980a"
+}

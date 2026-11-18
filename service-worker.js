@@ -1,8 +1,19 @@
-﻿const CACHE='webhero-v41';
-const CORE=['./','./index.html','./manifest.json','./vendor/three.module.js','./vendor/GLTFLoader.js','./vendor/utils/BufferGeometryUtils.js','./vendor/utils/SkeletonUtils.js','./models/cat.glb','./models/hatch_spidey_3.glb','./models/rhino.glb','./models/venom.glb','./models/shocker.glb','./icon-192.png','./icon-512.png'];
-const AUDIO=['start','fangad','boss','hint','sving','traff','seger','slut','landning'].map(n=>'./ljud/'+n+'.mp3');
+﻿const CACHE='webhero-v42';
+const CORE=['./','./index.html','./speech.js','./piper-worker.js','./manifest.json','./vendor/three.module.js','./vendor/GLTFLoader.js','./vendor/utils/BufferGeometryUtils.js','./vendor/utils/SkeletonUtils.js','./models/cat.glb','./models/hatch_spidey_3.glb','./models/rhino.glb','./models/venom.glb','./models/shocker.glb','./icon-192.png','./icon-512.png'];
+
+const VOICE_CACHE='piper-assets-v2';
+const VOICE=['ort.wasm.min.js','ort-wasm-simd.wasm','ort-wasm.wasm','piper_phonemize.js','piper_phonemize.wasm','piper_phonemize.data','sv_SE-lisa-medium.onnx','sv_SE-lisa-medium.onnx.json'].map(n=>'./vendor/piper/'+n);
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('webhero-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-async function cacheAudio(){const cache=await caches.open(CACHE);await Promise.all(AUDIO.map(async url=>{try{const response=await fetch(url,{cache:'no-cache'});if(response.ok)await cache.put(url,response)}catch(e){}}))}
-self.addEventListener('message',event=>{if(event.data?.type==='CACHE_AUDIO')event.waitUntil(cacheAudio())});
-self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;const url=new URL(event.request.url);if(url.pathname.includes('/ljud/')){event.respondWith(fetch(event.request).then(async response=>{if(response.ok){const cache=await caches.open(CACHE);await cache.put(event.request,response.clone())}return response}).catch(()=>caches.match(event.request).then(r=>r||Response.error())));return}event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request)))});
+async function cacheVoice(){const cache=await caches.open(VOICE_CACHE);for(const url of VOICE){if(await cache.match(url))continue;try{await cache.add(url)}catch(error){console.warn('Voice offline cache failed',error)}}}
+self.addEventListener('message',event=>{if(event.data?.type==='CACHE_TTS')event.waitUntil(cacheVoice())});
+self.addEventListener('fetch',event=>{
+if(event.request.method!=='GET'||new URL(event.request.url).origin!==location.origin)return;
+const voice=new URL(event.request.url).pathname.includes('/vendor/piper/');
+event.respondWith(caches.open(voice?VOICE_CACHE:CACHE).then(async cache=>{
+const cached=await cache.match(event.request);if(cached)return cached;
+const response=await fetch(event.request);
+if(voice&&response.ok){try{await cache.put(event.request,response.clone())}catch(error){console.warn(error)}}
+return response;
+}));
+});

@@ -6,11 +6,15 @@
 
 För att installera webbappen, låt sidan laddas färdigt och använd webbläsarens installationsknapp eller meny. På surfplatta behöver spelet vara tillgängligt via HTTPS för offline-installation; localhost på datorn är inte surfplattans localhost.
 
-Efter första laddningen ska spelet och Three.js finnas i offline-cache. När servern stängts kan den installerade appen eller samma URL öppnas offline. Tillgängligheten till svenska röster offline beror på operativsystemet; textremsor visas också. Spela en gång online eller via servern efter ändringar så att den nya versionen kan installeras.
+Efter första laddningen ska spelet och Three.js finnas i offline-cache. När servern stängts kan den installerade appen eller samma URL öppnas offline. Den medföljande Piper-rösten hämtas också till en separat offline-cache. Låt sidan vara öppen tills filerna har laddats färdigt. Spela en gång online eller via servern efter ändringar så att den nya versionen kan installeras.
 
 ## Röster
 
-Se [röstmanuset](ljud/ROSTMANUS.txt). MP3-filer är valfria. Lägg dem i `ljud/`, starta om servern om den stoppats och ladda om spelet med nätverk/server tillgänglig. Låt sidan vara öppen en stund så att ljudfilerna hämtas till offline-cachen. Utan inspelningar används webbläsarens svenska talsyntes om en sådan röst finns; uppläsning av namn kräver också talsyntes.
+Alla uppläsningar använder nu Piper med den svenska rösten `sv_SE-lisa-medium`, även spelarnamn och dynamiska uppdrag. Tryck på **Prova rösten** i startmenyn för att höra ”Följ pilen! Se upp! Gobby har dykt upp!”. Namnet Green Goblin visas fortfarande i spelet men läses som Gobby.
+
+Röstmodellen och motorn ligger lokalt i `vendor/piper/` (cirka 102 MB tillsammans) och cachas för offlinebruk. Första laddningen kan ta en stund. Talsyntesen körs i en bakgrundstråd; upprepade repliker återanvänder ljud som skapats under sessionen. Om Piper inte kan starta visas det i startmenyn och webbläsarens svenska röst används som reserv. De gamla MP3-filerna används inte längre för uppläsningen.
+
+Se [källor och licenser](vendor/piper/README.md). För att återställa motor- och modellfilerna: `python tools/download_piper.py`.
 
 ## 3D-modeller
 
