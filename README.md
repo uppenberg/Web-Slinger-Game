@@ -24,6 +24,12 @@ Hjältemodellen `models/spiderman.glb` är [Spiderman](https://sketchfab.com/3d-
 
 Den valbara modellen `models/hatch_spidey_2.glb` är [Hatch Spidey 2](https://sketchfab.com/3d-models/hatch-spidey-2-8b603f1f18704192bdba83f65ac4cde5) av spider-blood, licensierad under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Spelet använder dess egna hopp- och svinganimationer samt återanvänder rotationsspår för vila och löpning från den andra modellen.
 
-Rhino-modellen `models/rhino.glb` är [Rhino - Marvel Strike Force](https://sketchfab.com/3d-models/rhino-marvel-strike-force-c823f16878684b3eb72ce94d96cfcab0) av Kabiidev, licensierad under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Egna animationer används för bland annat reaktion; spelet försöker anpassa Spideys löpning till Rhino-skelettet.
+Rhino-modellen `models/rhino.glb` är [Rhino - Marvel Strike Force](https://sketchfab.com/3d-models/rhino-marvel-strike-force-c823f16878684b3eb72ce94d96cfcab0) av Kabiidev, licensierad under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Rhino-klippen anv?nds f?r ankomst, tr?ffreaktion, vila, r?relse och attack.
 
-Venom-modellen är [Fortnite Venom Extreme](https://sketchfab.com/3d-models/fortnite-venom-extreme-e75bdab0dafb4586b87b85f9a499a1a5) av 20062020year, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Shocker-modellen är [Shocker - Marvel Strike Force](https://sketchfab.com/3d-models/shocker-marvel-strike-force-e0c6d65d0261496d9789e5ddb5baa5d8) av Kabiidev, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Egna animationsspår respektive anpassade rotationsspår används där de finns.
+Venom-modellen är [Fortnite Venom Extreme](https://sketchfab.com/3d-models/fortnite-venom-extreme-e75bdab0dafb4586b87b85f9a499a1a5) av 20062020year, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Shocker-modellen är [Shocker - Marvel Strike Force](https://sketchfab.com/3d-models/shocker-marvel-strike-force-e0c6d65d0261496d9789e5ddb5baa5d8) av Kabiidev, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Egna animationsspår respektive anpassade rotationsspår används där de finns. Venom saknar egna klipp och ?teranv?nder Rhinos animationer, retargetade till Venoms skelett.
+
+Doctor Octopus använder den tillagda modellen `models/doctor-octopus-1994-tas.glb` och dess inbyggda vilo-, gång- och tentakelattackanimationer. Modellen tillhandahålls i projektet av användaren.
+
+Lizard och Scorpion använder de tillagda 1994 TAS-modellerna med egna rörelse- och attackanimationer. Green Goblin använder sin nya modell, flyger mellan husen ungefär i höjd med de lägre husen; han kan fångas med nätskott. Modellerna tillhandahålls i projektet av användaren.
+
+Varje boss har egna repliker när den dyker upp och när den fångas. Shocker v?xlar mellan tv? viloklipp och spelar sin specialattack eller hela ultimate-sekvensen.
