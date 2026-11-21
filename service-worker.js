@@ -1,4 +1,4 @@
-﻿const CACHE='webhero-v49';
+﻿const CACHE='webhero-v52';
 const CORE=['./','./index.html','./speech.js','./piper-worker.js','./manifest.json','./vendor/three.module.js','./vendor/GLTFLoader.js','./vendor/utils/BufferGeometryUtils.js','./vendor/utils/SkeletonUtils.js','./models/cat.glb','./models/hatch_spidey_3.glb','./models/rhino.glb','./models/venom.glb','./models/shocker.glb','./models/doctor-octopus-1994-tas.glb','./models/the-lizard-1994-tas.glb','./models/scorpion-1994-tas.glb','./models/green-goblin-1994-tas.glb','./icon-192.png','./icon-512.png'];
 
 const VOICE_CACHE='piper-assets-v2';
